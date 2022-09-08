@@ -2,7 +2,6 @@
 /**
  *main - Entry point
  *
- * Description: prints "with proper grammer, but the outcome is a piece of art,"
  *
  * Return: always 0 (Success)
  */
