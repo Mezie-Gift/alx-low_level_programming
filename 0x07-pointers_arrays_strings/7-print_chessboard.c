@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _print_chessboard - prints a chessboard
+ * print_chessboard - prints a chessboard
  * @a: the string to be used
  *
  * Return: void
