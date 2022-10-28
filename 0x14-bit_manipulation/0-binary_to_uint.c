@@ -11,24 +11,26 @@
 
 unsigned int binary_to_uint(const char *b)
 {
-	int c;
-	unsigned int k = 1;
-	unsigned int i = 0;
-	unsigned int len;
-
-	len = strlen(b);
+	unsigned int ui;
+	int len, base_two;
 
 	if (!b)
 		return (0);
-	for (c = len - 1; c >= 0; c--)
+
+	ui = 0;
+
+	for (len = 0; b[len] != '\0'; len++)
+		;
+	for (len--, base_two = 1; len >= 0; len--, base_two *= 2)
 	{
-		if (b[c] != 48 && b[c] != 49)
-			return (0);
-		if (b[c] == 49)
+		if (b[len] != '0' && b[len] != '1')
 		{
-			i += k;
+			return (0);
 		}
-		k *= 2;
+		if (b[len] & 1)
+		{
+			ui += base_two;
+		}
 	}
-	return (i);
+	return (ui);
 }
